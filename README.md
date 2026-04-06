@@ -22,7 +22,7 @@ The system combines retrieval-augmented generation (RAG), OpenAI models, and a m
 - **Citation-backed responses** (traceable to source text)
 - **Streaming responses (SSE)** for real-time interaction
 - **RAG architecture** (embeddings + vector search)
-- **Modern UI** inspired by ChatGPT
+- **Modern UI** 
 - **Dockerized backend** with PostgreSQL + pgvector
 - Modular, maintainable, OOP-based backend design
 
