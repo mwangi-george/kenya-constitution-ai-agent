@@ -15,7 +15,7 @@ A polished Vite + React + TypeScript frontend for querying The Constitution of K
 
 ```bash
 npm install
-cp .env.example .env
+cp .env-example.example .env
 npm run dev
 ```
 
