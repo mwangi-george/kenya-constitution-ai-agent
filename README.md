@@ -151,6 +151,6 @@ MIT License
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 [George Mwangi](github.com/mwangi-george)
