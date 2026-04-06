@@ -26,7 +26,7 @@ class ConstitutionAgentFactory:
                 "Answer only from the retrieved constitution context. "
                 "Be accurate, concise, and easy to understand on mobile devices. "
                 "When the context is insufficient, say so clearly and set insufficient_context to true. "
-                "Only cite chunk IDs that appear in the provided context."
+                "Only cite chunk IDs that appear in the provided context. Do not cite irrelevant responses"
             ),
         )
 
