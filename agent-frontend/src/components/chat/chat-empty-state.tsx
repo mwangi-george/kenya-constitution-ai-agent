@@ -7,7 +7,7 @@ interface ChatEmptyStateProps {
 
 export function ChatEmptyState({ onSelectQuestion }: ChatEmptyStateProps) {
   return (
-    <div className="flex h-full flex-col items-center justify-center rounded-4xl border border-dashed border-white/60 bg-white/45 px-6 py-12 text-center backdrop-blur-sm">
+    <div className="flex h-full flex-col items-center justify-center rounded-4xl border border-dashed border-white/60 bg-white/45 px-6 py-1 text-center backdrop-blur-sm">
       <div className="mb-5 flex size-16 items-center justify-center rounded-3xl bg-linear-to-br from-sky-500 to-indigo-600 text-white shadow-[0_16px_36px_-20px_rgba(79,70,229,0.8)]">
         <MessageSquareMore className="size-8" />
       </div>
@@ -15,7 +15,7 @@ export function ChatEmptyState({ onSelectQuestion }: ChatEmptyStateProps) {
       <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600">
         Ask about rights, devolution, Parliament, public participation, leadership and integrity, or any other part of the Constitution.
       </p>
-      <div className="mt-8 grid w-full max-w-3xl gap-3 md:grid-cols-2">
+      <div className="mt-2 grid w-full max-w-3xl gap-3 md:grid-cols-2">
         {EXAMPLE_QUESTIONS.map((question) => (
           <button
             key={question}

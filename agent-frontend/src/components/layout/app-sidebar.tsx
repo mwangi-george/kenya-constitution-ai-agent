@@ -1,8 +1,13 @@
-import { Landmark, Scale, ShieldCheck, Sparkles } from "lucide-react";
+import { Landmark, ShieldCheck, Sparkles } from "lucide-react";
 import { EXAMPLE_QUESTIONS } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-// import { Separator } from "@/components/ui/separator";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
 
 interface AppSidebarProps {
   onSelectQuestion: (question: string) => void;
@@ -15,8 +20,9 @@ export function AppSidebar({ onSelectQuestion }: AppSidebarProps) {
         <Card className="overflow-hidden">
           <CardHeader className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 text-white shadow-lg">
-                <Scale className="size-6" />
+              <div className="flex size-12 items-center justify-center text-white rounded-3xl">
+                {/*<Scale className="size-6" />*/}
+                <img src={'img/coat_of_arms_ke.png'} alt={"coat_of_arms_ke"}/>
               </div>
               <div>
                 <CardTitle className="text-xl">Katiba AI</CardTitle>
