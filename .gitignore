@@ -216,6 +216,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 
+# Environments Files
+.env
+
 # Frontend files
 !**/glob-import/dir/node_modules
 .DS_Store

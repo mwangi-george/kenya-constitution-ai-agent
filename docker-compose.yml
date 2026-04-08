@@ -1,0 +1,53 @@
+services:
+  api:
+    build:
+      context: ./agent-backend
+      dockerfile: Dockerfile
+    container_name: constitution-api
+    env_file:
+      - ./agent-backend/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./agent-backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: constitution-db
+    env_file:
+      - .env
+    ports:
+      - "5678:5432"
+    volumes:
+      - constitution_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # FRONTEND (React built + served by Nginx)
+  # ============================================================================
+  web_ui:
+    build:
+      context: ./agent-frontend
+      dockerfile: Dockerfile
+    container_name: katiba-ai
+
+    env_file:
+      - ./agent-frontend/.env
+
+    # Nginx serves the built app on port 80 in the container
+    ports:
+      - "5173:80"
+
+    # frontend should not start before API
+    depends_on:
+      - api
+
+volumes:
+  constitution_pg_data:
